@@ -23,7 +23,18 @@ function Store() {
     return (
       <div>
         <h1>This is the store, List of books to buy lie here</h1>
-        <img src={books[1].formats["image/jpeg"]} />
+
+        <div className="grid grid-cols-4">
+          {books.map((book) => (
+            <div key={book.id} className="m-8">
+              <h3>{book.title}</h3>
+              <img
+                src={book.formats["image/jpeg"]}
+                alt={book.title}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     );
   } else {
