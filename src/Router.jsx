@@ -25,7 +25,12 @@ function Router() {
     }
   ])
  
-  return <RouterProvider router={router} />
+  return (
+    <div>
+      <h1>::NAVBAR HERE::</h1>
+      <RouterProvider router={router} />
+    </div>
+  )
 }
 
 export default Router
