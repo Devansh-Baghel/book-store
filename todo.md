@@ -1,0 +1,4 @@
+- Add 404 PAGE
+- Add NAVBAR
+- Add popup to tell user that this store is fake,
+- Add popup to tell user that the pricing is random.

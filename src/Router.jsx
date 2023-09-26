@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './Home'
 import Cart from './Cart'
+import Store from './Store'
 import WishList from './WishList'
 
 function Router() {
@@ -13,6 +14,10 @@ function Router() {
     {
       path: "cart",
       element: <Cart />
+    },
+    {
+      path: "store",
+      element: <Store />
     },
     {
       path: "wish-list",
