@@ -8,6 +8,12 @@ function Store() {
   const [cart, setCart] = useState([])
   const [wishList, setWishList] = useState([])
 
+  function getRandPrice() {
+    const randomCents = Math.floor(Math.random() * (2100 - 500 + 1)) + 500;
+    const randomPrice = (randomCents / 100).toFixed(2);
+    return randomPrice
+  }
+
   function getBooks() {
     axios.get("https://gutendex.com/books/").then((res) => {
       console.log(res.data.results);
@@ -20,6 +26,7 @@ function Store() {
 
   useEffect(() => {
     getBooks();
+    console.log(getRandPrice())
   }, []);
 
   function addToCart(id) {
