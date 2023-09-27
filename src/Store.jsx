@@ -5,12 +5,15 @@ import { useState } from "react";
 function Store() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [cart, setCart] = useState([])
+  const [wishList, setWishList] = useState([])
 
   function getBooks() {
     axios.get("https://gutendex.com/books/").then((res) => {
       console.log(res.data.results);
       console.log(res.data.results[1].formats["image/jpeg"]);
-      setBooks(res.data.results);
+      const reverseBooks = res.data.results.reverse();
+      setBooks(reverseBooks);
       setLoading(false);
     });
   }
@@ -18,6 +21,16 @@ function Store() {
   useEffect(() => {
     getBooks();
   }, []);
+
+  function addToCart(id) {
+    setCart([...cart, id])
+    console.log(cart)
+  }
+
+  function addToWishList(id) {
+    setWishList([...wishList, id])
+    console.log(wishList)
+  }
 
   if (!loading) {
     return (
@@ -32,6 +45,8 @@ function Store() {
                 src={book.formats["image/jpeg"]}
                 alt={book.title}
               />
+              <button onClick={() => {addToCart(book.id)}}>Add to Cart</button>
+              <button onClick={() => {addToWishList(book.id)}}>Add to Wish List</button>
             </div>
           ))}
         </div>
