@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useContext } from "react";
-import { AppContext } from "./App";
+import { AppContext } from "../App";
 
 function Store() {
   const [books, setBooks] = useState([]);

@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Home from './Home'
-import Cart from './Cart'
-import Store from './Store'
-import WishList from './WishList'
+import Home from './components/Home'
+import Cart from './components/Cart'
+import Store from './components/Store'
+import WishList from './components/WishList'
 
 function Router() {
 
@@ -17,6 +17,10 @@ function Router() {
     },
     {
       path: "store",
+      element: <Store />
+    },
+    {
+      path: "shop",
       element: <Store />
     },
     {
