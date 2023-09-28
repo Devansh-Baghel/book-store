@@ -11,23 +11,33 @@ function Cart() {
   function getCartBooks(books) {
     const bookIds = books.join(",");
     axios.get(`https://gutendex.com/books?ids=${bookIds}`).then((res) => {
-      setBookData(res.data.results)
-      console.log(res.data.results)
+      setBookData(res.data.results);
+      console.log(res.data.results);
     });
   }
 
   useEffect(() => {
     getCartBooks(cart);
-  }, [])
+  }, []);
 
   return (
     <div>
-      {cart.map((book) => (
-        <h1 key={book}>{book}</h1>
+      {bookData.map((book) => (
+        <div key={book.id}>
+          <h3>{book.title}</h3>
+          <p>{book.authors[0].name}</p>
+          <p>{book.id}</p>
+          <img src={book.formats["image/jpeg"]} />
+          {/* <p>{price}</p> */}
+          <div>
+            <button>+</button>
+            <span>1</span>
+            <button>-</button>
+          </div>
+        </div>
       ))}
-      {bookData.map(book => (
-        <h1 key={book.id}>{book.title}</h1>
-      ))}
+
+      <button>Checkout</button>
     </div>
   );
 }
