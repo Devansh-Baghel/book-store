@@ -5,8 +5,8 @@ import Router from './Router';
 export const AppContext = createContext();
 
 function App() {
-  const [cart, setCart] = useState(["metamorphosis", "the book of disquiet"])
-  const [wishList, setWishList] = useState(["whole numbers and half truths", "12 rules for life"])
+  const [cart, setCart] = useState([])
+  const [wishList, setWishList] = useState([])
 
   return (
     <AppContext.Provider value={{cart, setCart, wishList, setWishList}}>

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useContext } from "react";
@@ -7,7 +8,7 @@ import { AppContext } from "./App";
 function Store() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { cart, wishList } = useContext(AppContext)
+  const { cart, wishList, setCart, setWishList } = useContext(AppContext)
 
   function getRandPrice() {
     const randomCents = Math.floor(Math.random() * (2100 - 500 + 1)) + 500;
@@ -44,6 +45,7 @@ function Store() {
     return (
       <div>
         <h1>This is the store, List of books to buy lie here</h1>
+        <Link to={"../cart"}>Go to Cart</Link>
         <h1>{cart + wishList}</h1>
 
         <div className="grid grid-cols-4">

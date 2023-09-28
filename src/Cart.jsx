@@ -1,9 +1,16 @@
+import { useContext } from "react";
+import { AppContext } from "./App";
+
 function Cart() {
+  const { cart } = useContext(AppContext);
+
   return (
     <div>
-      <h1>This is the Cart</h1>
+      {cart.map((book) => (
+        <h1 key={book}>{book}</h1>
+      ))}
     </div>
-  )
+  );
 }
 
-export default Cart
+export default Cart;
