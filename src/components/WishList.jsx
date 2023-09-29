@@ -7,6 +7,7 @@ import { useEffect } from "react";
 function WishList() {
   const { wishList } = useContext(AppContext);
   const [bookData, setBookData] = useState([]);
+  const [hasData, setHasData] = useState();
 
   function getCartBooks(books) {
     const bookIds = books.join(",");
@@ -18,8 +19,14 @@ function WishList() {
 
   useEffect(() => {
     getCartBooks(wishList);
+    if (wishList.length !== 0) {
+      setHasData(true);
+    } else {
+      setHasData(false);
+    }
   }, []);
 
+  if (hasData) {
   return (
     <div>
       {bookData.map((book) => (
@@ -33,6 +40,13 @@ function WishList() {
       ))}
     </div>
   );
+  } else {
+    return (
+      <div>
+        <h1>Your wish list is empty</h1>
+      </div>
+    )
+  }
 }
 
 export default WishList
