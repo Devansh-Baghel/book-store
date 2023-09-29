@@ -7,6 +7,7 @@ import { useEffect } from "react";
 function Cart() {
   const { cart } = useContext(AppContext);
   const [bookData, setBookData] = useState([]);
+  const [hasData, setHasData] = useState();
 
   function getCartBooks(books) {
     const bookIds = books.join(",");
@@ -18,28 +19,41 @@ function Cart() {
 
   useEffect(() => {
     getCartBooks(cart);
+    if (cart.length !== 0) {
+      setHasData(true);
+    } else {
+      setHasData(false);
+    }
   }, []);
 
-  return (
-    <div>
-      {bookData.map((book) => (
-        <div key={book.id}>
-          <h3>{book.title}</h3>
-          <p>{book.authors[0].name}</p>
-          <p>{book.id}</p>
-          <img src={book.formats["image/jpeg"]} />
-          {/* <p>{price}</p> */}
-          <div>
-            <button>+</button>
-            <span>1</span>
-            <button>-</button>
+  if (hasData) {
+    return (
+      <div>
+        {bookData.map((book) => (
+          <div key={book.id}>
+            <h3>{book.title}</h3>
+            <p>{book.authors[0].name}</p>
+            <p>{book.id}</p>
+            <img src={book.formats["image/jpeg"]} />
+            {/* <p>{price}</p> */}
+            <div>
+              <button>+</button>
+              <span>1</span>
+              <button>-</button>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
 
-      <button>Checkout</button>
-    </div>
-  );
+        <button>Checkout</button>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <h1>THE CART IS EMPTY</h1>
+      </div>
+    );
+  }
 }
 
 export default Cart;
