@@ -1,8 +1,9 @@
-- Add 404 PAGE
-- Add NAVBAR
-- Add popup to tell user that this store is fake,
-- Add popup to tell user that the pricing is random.
-- Add a next page option in store
-- Going to /cart directly from url bar causes problems
-- Add temp Navbar
-- Make navbar reactive
+- [ ] Add 404 PAGE
+- [ ] Add NAVBAR
+- [ ] Add popup to tell user that this store is fake,
+- [ ] Add popup to tell user that the pricing is random.
+- [ ] Add a next page option in store
+- [x] Going to /cart directly from url bar causes problems
+- [x] Add temp Navbar
+- [x] Make navbar reactive
+- [ ] Add css
