@@ -1,19 +1,42 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useContext } from 'react'
-import { AppContext } from '../App'
+import React from "react";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AppContext } from "../App";
+import homeLogo from "../assets/home.svg";
+import cartLogo from "../assets/shopping_cart.svg";
+import bookmark from "../assets/bookmark.svg";
+import bookmarks from "../assets/bookmarks.svg";
+import favorite from "../assets/favorite.svg";
+import star from "../assets/star.svg";
+import shoppingBag from "../assets/shopping_bag.svg";
 
 function Navbar() {
-  const {cart, wishList} = useContext(AppContext);
+  const { cart, wishList } = useContext(AppContext);
 
   return (
-    <div>
-      <Link to={"/"}>Home </Link>
-      <Link to={"/store"}> Shop </Link>
-      <Link to={"/cart"}> Cart ({cart.length})</Link>
-      <Link to={"/wish-list"}> Wish List ({wishList.length})</Link>
+    <div className="flex justify-around text-xl py-4 items-center">
+      <Link to={"/"} className="flex items-end">
+        <img src={homeLogo} alt="" className="w-8" />
+        {/* Home */}
+      </Link>
+      <div className="flex gap-8 items-center">
+        <Link to={"/store"} className="flex gap-1 items-center">
+          Shop
+          <img src={shoppingBag} alt="" />
+        </Link>
+        <Link to={"/wish-list"} className="flex gap-1 items-center">
+          Wish List
+          <img src={bookmarks} alt="" />
+        </Link>
+        <div className="bg-[#FFCE1A] text-whi px-8 py-1 rounded-lg">
+          <Link to={"/cart"} className="flex gap-2">
+            <img src={cartLogo} alt="" />
+            Basket ({cart.length})
+          </Link>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
