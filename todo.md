@@ -3,3 +3,5 @@
 - Add popup to tell user that this store is fake,
 - Add popup to tell user that the pricing is random.
 - Add a next page option in store
+- Going to /cart directly from url bar causes problems
+- Add temp Navbar
