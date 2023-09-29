@@ -5,3 +5,4 @@
 - Add a next page option in store
 - Going to /cart directly from url bar causes problems
 - Add temp Navbar
+- Make navbar reactive
