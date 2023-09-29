@@ -45,8 +45,6 @@ function Store() {
     return (
       <div>
         <h1>This is the store, List of books to buy lie here</h1>
-        <Link to={"../cart"}>Go to Cart</Link>
-        <h1>{cart + wishList}</h1>
 
         <div className="grid grid-cols-4">
           {books.map((book) => (
