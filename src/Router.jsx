@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { Routes } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Error from './components/Error'
 
 function Router() {
   return (
@@ -17,6 +18,7 @@ function Router() {
         <Route path='/shop' element={<Store />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/wish-list' element={<WishList />} />
+        <Route path='*' element={<Error />} />
       </Routes>
     </BrowserRouter>
   )

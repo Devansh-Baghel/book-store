@@ -1,5 +1,5 @@
-- [ ] Add 404 PAGE
-- [ ] Add NAVBAR
+- [x] Add 404 PAGE
+- [x] Add NAVBAR
 - [ ] Add popup to tell user that this store is fake,
 - [ ] Add popup to tell user that the pricing is random.
 - [ ] Add a next page option in store
@@ -7,3 +7,12 @@
 - [x] Add temp Navbar
 - [x] Make navbar reactive
 - [ ] Add css
+- [ ] Fix glitch with cart and wishlist where it shows empty for a frame
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
