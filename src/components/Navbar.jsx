@@ -28,10 +28,11 @@ function Navbar() {
           Wish List
           <img src={bookmarks} alt="" />
         </Link>
-        <div className="bg-[#FFCE1A] text-whi px-8 py-1 rounded-lg">
-          <Link to={"/cart"} className="flex gap-2">
+        <div className="bg-yellow text-whi px-8 py-1 rounded-lg shadow-sm">
+          <Link to={"/cart"} className="flex gap-2 items-center">
             <img src={cartLogo} alt="" />
-            Basket ({cart.length})
+            Basket
+            <span className="text-lg">({cart.length})</span>
           </Link>
         </div>
       </div>
