@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import { AppContext } from "../App";
 import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
+import { AppContext } from "../App";
 import Loader from "./Loader";
+import emptyCart from "../assets/undraw_empty_cart.svg";
+import EmptyList from "./EmptyList";
 
 function Cart() {
   const { cart } = useContext(AppContext);
@@ -51,11 +51,7 @@ function Cart() {
       </div>
     );
   } else if (!hasData) {
-    return (
-      <div>
-        <h1>THE CART IS EMPTY</h1>
-      </div>
-    );
+    return <EmptyList src={emptyCart} page={"cart"}/>;
   } else if (hasData && loading) {
     return <Loader />;
   }

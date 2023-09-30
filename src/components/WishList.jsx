@@ -2,6 +2,8 @@ import { useContext, useState, useEffect } from "react";
 import { AppContext } from "../App";
 import axios from "axios";
 import Loader from "./Loader";
+import emptyWishList from "../assets/undraw_bookmarks.svg";
+import EmptyList from "./EmptyList";
 
 function WishList() {
   const { wishList } = useContext(AppContext);
@@ -42,11 +44,7 @@ function WishList() {
       </div>
     );
   } else if (!hasData) {
-    return (
-      <div>
-        <h1>Your wish list is empty</h1>
-      </div>
-    );
+    return <EmptyList src={emptyWishList} page={"wish list"} />;
   } else if (hasData && loading) {
     return <Loader />;
   }
