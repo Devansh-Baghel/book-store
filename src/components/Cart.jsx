@@ -9,23 +9,12 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 function Cart() {
   const { cart } = useContext(AppContext);
-  const [isEmpty, setIsEmpty] = useState();
   const { data, error, isLoading } = useSWR(
-    `https://gutendex.com/books?ids=${cart.join(",")}`,
+    cart.length === 0
+      ? null
+      : `https://gutendex.com/books?ids=${cart.join(",")}`,
     fetcher
   );
-
-  useEffect(() => {
-    if (cart.length === 0) {
-      setIsEmpty(true);
-    } else {
-      setIsEmpty(false)
-    }
-  }, []);
-
-  if (isEmpty) {
-    return <EmptyList src={emptyCart} page={"cart"} />;
-  }
 
   if (error) {
     return <div className="text-2xl text-center mt-20">There was an error</div>;
@@ -33,6 +22,10 @@ function Cart() {
 
   if (isLoading) {
     return <Loader />;
+  }
+
+  if (!data) {
+    return <EmptyList src={emptyCart} page={"cart"} />;
   }
 
   return (
