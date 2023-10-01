@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div className="flex justify-center items-center gap-28 mx-40 mt-10">
-      <div className="flex flex-col gap-5 pl-10">
-        <h1 className="text-3xl font-main font-medium">
+    <div className="flex justify-center items-center gap-28 xl:mx-40 md:mx-20 mx-8 md:mt-20 mt-48">
+      <div className="flex flex-col gap-5 md:pl-10 ">
+        <h1 className="xl:text-3xl text-2xl font-main font-medium">
           Embark on a Literary Journey <br /> Explore Worlds, Discover Stories
           at Our Bookstore!
         </h1>
@@ -15,7 +15,7 @@ function Home() {
           </button>
         </Link>
       </div>
-      <img src={bibliophile} alt="illustration of a woman reading" className="w-96" />
+      <img src={bibliophile} alt="illustration of a woman reading" className="xl:w-96 hidden md:block md:w-[30vw]" />
     </div>
   );
 }
