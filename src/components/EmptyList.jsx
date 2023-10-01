@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function EmptyList(props) {
   return (
     <div className="flex justify-center items-center mt-10 flex-col gap-6">
-      <img src={props.src} alt="illustration of empty cart" className="w-96" />
+      <img src={props.src} alt={`illustration of empty ${props.page}`} className="w-96" />
       <h1 className="font-main font-medium text-2xl text-slate-950">
         Your {props.page} is empty
       </h1>

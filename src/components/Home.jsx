@@ -15,7 +15,7 @@ function Home() {
           </button>
         </Link>
       </div>
-      <img src={bibliophile} alt="" className="w-96" />
+      <img src={bibliophile} alt="illustration of a woman reading" className="w-96" />
     </div>
   );
 }
