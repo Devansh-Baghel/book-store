@@ -8,7 +8,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 function Store() {
   const { cart, wishList, setCart, setWishList } = useContext(AppContext);
   const { data, error, isLoading } = useSWR(
-    "https://gutendex.com/books/?page=2",
+    "https://gutendex.com/books/?page=1",
     fetcher
   );
 

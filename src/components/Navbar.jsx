@@ -11,10 +11,10 @@ import star from "../assets/star.svg";
 import shoppingBag from "../assets/shopping_bag.svg";
 
 function Navbar() {
-  const { cart, wishList } = useContext(AppContext);
+  const { cart } = useContext(AppContext);
 
   return (
-    <div className="flex justify-around text-xl py-4 items-center">
+    <div className="sm:flex justify-around text-xl py-4 items-center hidden ">
       <Link to={"/"} className="flex items-end">
         <img src={homeLogo} alt="" className="w-8" />
         {/* Home */}
