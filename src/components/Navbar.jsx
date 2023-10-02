@@ -4,10 +4,7 @@ import { useContext } from "react";
 import { AppContext } from "../App";
 import homeLogo from "../assets/home.svg";
 import cartLogo from "../assets/shopping_cart.svg";
-import bookmark from "../assets/bookmark.svg";
 import bookmarks from "../assets/bookmarks.svg";
-import favorite from "../assets/favorite.svg";
-import star from "../assets/star.svg";
 import shoppingBag from "../assets/shopping_bag.svg";
 
 function Navbar() {

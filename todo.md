@@ -7,12 +7,12 @@
 - [x] Add temp Navbar
 - [x] Make navbar reactive
 - [ ] Add css
-- [ ] Fix glitch with cart and wishlist where it shows empty for a frame
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [x] Fix glitch with cart and wishlist where it shows empty for a frame
+- [ ] Add footer
+- [ ] Custom scrollbar
+- [ ] Add Link to Source Code
+- [ ] make sure user can't add the same thing twice into the cart or wishlist
+- [x] Add random prices
+- [ ] Sync random prices between components
 - [ ] 
 - [ ] 

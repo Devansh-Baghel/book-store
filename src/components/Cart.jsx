@@ -16,6 +16,12 @@ function Cart() {
     fetcher
   );
 
+  function getRandPrice() {
+    const randomCents = Math.floor(Math.random() * (2100 - 500 + 1)) + 500;
+    const randomPrice = (randomCents / 100).toFixed(2);
+    return randomPrice;
+  }
+
   if (error) {
     return <div className="text-2xl text-center mt-20">There was an error</div>;
   }
@@ -33,6 +39,7 @@ function Cart() {
       {data.results.map((book) => (
         <div key={book.id}>
           <h3>{book.title}</h3>
+          <h3>${getRandPrice()}</h3>
           {/* <p>{book.authors[0].name}</p> */}
           <p>{book.id}</p>
           <img src={book.formats["image/jpeg"]} />
