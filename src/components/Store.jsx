@@ -40,12 +40,16 @@ function Store() {
 
   return (
     <div>
-      <div className="grid grid-cols-4">
+      <div className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 justify-center mt-20">
         {data.results.reverse().map((book) => (
-          <div key={book.id} className="m-8">
-            <h3>{book.title}</h3>
+          <div
+            key={book.id}
+            className="m-8 w-[80vw] sm:w-[60vw] md:w-[40vw] bg-gray-50 shadow-xl rounded-xl border-yellow border-4 flex flex-col p-6 gap-4"
+          >
+            <h3 className="text-xl">{book.title}</h3>
             <img src={book.formats["image/jpeg"]} alt={book.title} />
             <button
+              className="bg-yellow rounded-md p-2"
               onClick={() => {
                 addToCart(book.id);
               }}
