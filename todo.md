@@ -9,10 +9,10 @@
 - [ ] Add css
 - [x] Fix glitch with cart and wishlist where it shows empty for a frame
 - [ ] Add footer
-- [ ] Custom scrollbar
+- [x] Custom scrollbar
 - [ ] Add Link to Source Code
-- [ ] make sure user can't add the same thing twice into the cart or wishlist
+- [x] make sure user can't add the same thing twice into the cart or wishlist
+- [ ] Add a popup to tell user that the item is already in cart.
+- [ ] Add a popup to tell user that item is added to cart / wishlist.
 - [x] Add random prices
 - [ ] Sync random prices between components
-- [ ] 
-- [ ] 
