@@ -1,18 +1,26 @@
 - [x] Add 404 PAGE
 - [x] Add NAVBAR
+- [x] Add temp Navbar
+- [x] Going to /cart directly from url bar causes problems
+- [x] Make navbar reactive
+- [x] Fix glitch with cart and wishlist where it shows empty for a frame
+- [x] Custom scrollbar
+- [x] make sure user can't add the same thing twice into the cart or wishlist
+- [x] Add random prices
+- [x] Add spinner
+- [x] Sync random prices between store and cart.
+- [ ] Prevent prices to reload in store when button is clicked.
 - [ ] Add popup to tell user that this store is fake,
 - [ ] Add popup to tell user that the pricing is random.
-- [ ] Add a next page option in store
-- [x] Going to /cart directly from url bar causes problems
-- [x] Add temp Navbar
-- [x] Make navbar reactive
-- [ ] Add css
-- [x] Fix glitch with cart and wishlist where it shows empty for a frame
-- [ ] Add footer
-- [x] Custom scrollbar
-- [ ] Add Link to Source Code
-- [x] make sure user can't add the same thing twice into the cart or wishlist
 - [ ] Add a popup to tell user that the item is already in cart.
 - [ ] Add a popup to tell user that item is added to cart / wishlist.
-- [x] Add random prices
-- [ ] Sync random prices between components
+- [ ] Add a next page option in store or infinite scroll
+- [ ] Add footer
+- [ ] Add Back to Top button in Store page
+- [ ] Add Link to Source Code
+- [ ] Add css
+  - [x] Home Page
+  - [x] Store Page
+  - [x] Navbar
+  - [ ] Cart Page
+  - [ ] Wish List Page

@@ -29,7 +29,7 @@ function Navbar() {
           <Link to={"/cart"} className="flex gap-2 items-center">
             <img src={cartLogo} alt="" />
             Basket
-            <span className="text-lg">({cart.length})</span>
+            <span className="text-lg">({cart.ids.length})</span>
           </Link>
         </div>
       </div>

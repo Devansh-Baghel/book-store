@@ -10,17 +10,11 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 function Cart() {
   const { cart } = useContext(AppContext);
   const { data, error, isLoading } = useSWR(
-    cart.length === 0
+    cart.ids.length === 0
       ? null
-      : `https://gutendex.com/books?ids=${cart.join(",")}`,
+      : `https://gutendex.com/books?ids=${cart.ids.join(",")}`,
     fetcher
   );
-
-  function getRandPrice() {
-    const randomCents = Math.floor(Math.random() * (2100 - 500 + 1)) + 500;
-    const randomPrice = (randomCents / 100).toFixed(2);
-    return randomPrice;
-  }
 
   if (error) {
     return <div className="text-2xl text-center mt-20">There was an error</div>;
@@ -36,21 +30,25 @@ function Cart() {
 
   return (
     <div>
-      {data.results.map((book) => (
-        <div key={book.id}>
-          <h3>{book.title}</h3>
-          <h3>${getRandPrice()}</h3>
-          {/* <p>{book.authors[0].name}</p> */}
-          <p>{book.id}</p>
-          <img src={book.formats["image/jpeg"]} />
-          {/* <p>{price}</p> */}
-          <div>
-            <button>+</button>
-            <span>1</span>
-            <button>-</button>
+      {data.results.map((book) => {
+        const bookPriceIndex = cart.ids.indexOf(book.id);
+        const bookPrice = cart.prices[bookPriceIndex]
+        return (
+          <div key={book.id}>
+            <h3>{book.title}</h3>
+            <h3>${bookPrice}</h3>
+            {/* <p>{book.authors[0].name}</p> */}
+            <p>{book.id}</p>
+            <img src={book.formats["image/jpeg"]} />
+            {/* <p>{price}</p> */}
+            <div>
+              <button>+</button>
+              <span>1</span>
+              <button>-</button>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
 
       <button>Checkout</button>
     </div>
