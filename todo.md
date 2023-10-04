@@ -18,9 +18,10 @@
 - [ ] Add footer
 - [ ] Add Back to Top button in Store page
 - [ ] Add Link to Source Code
-- [ ] Add css
+- [ ] Add Lazy loading to svg
+- [x] Add css
   - [x] Home Page
   - [x] Store Page
   - [x] Navbar
-  - [ ] Cart Page
-  - [ ] Wish List Page
+  - [x] Cart Page
+  - [x] Wish List Page
