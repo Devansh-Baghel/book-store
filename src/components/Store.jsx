@@ -45,7 +45,7 @@ function Store() {
   }
 
   return (
-    <div className="flex justify-center store_page">
+    <div className="flex justify-center mb-20 ">
       <div className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 justify-center mt-20 gap-8 ">
         {data.results.map((book) => {
           const randomPrice = getRandPrice();
