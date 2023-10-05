@@ -1,26 +1,35 @@
-# Book Store
 
-This is my submission of [TOP's Shopping Cart Project](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart).
+Welcome to your project! This README provides information on how to get started and perform common tasks.
+## notes 
 
-Made with [React](https://react.dev/) and [TailwindCSS](https://tailwindcss.com/). 
+use only pnpm for this
+## Getting Started
 
-# Quickstart install
-<br>
+Follow these steps to get your project up and running:
 
--fork repo
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/a-s-t-e-y-a/infoB-J-P.git
+   cd project-directory
 
--git clone 
+2. To start the project:
+   ```sh
+   pnpm install 
 
-<p> install dependency</p>
--pnpm intall
+3.  To start the server:
+   ```sh
+   pnpm dev
+4. run server at:
+   ```sh
+   http://localhost:5173/
 
-- start server using-
-<br>
-pnpm dev
 
-# snapshot
-![cart](<Screenshot from 2023-10-05 12-12-11.png>)
-![books](image.png)
-![wishlist](image-1.png)
-![home](image-2.png)
-![cart](image-3.png)
+5. To commit using git bash script:
+   ```sh
+   chmod +x gitCommit.sh
+    ./gitCommit.sh
+
+![home](image-4.png)
+![star reading book](image-5.png)
+![wish list](image-6.png)
+![cart](image-7.png)
