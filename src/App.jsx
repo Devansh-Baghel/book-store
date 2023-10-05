@@ -6,7 +6,7 @@ export const AppContext = createContext();
 
 function App() {
   const [cart, setCart] = useState({ ids: [], prices: [] });
-  const [wishList, setWishList] = useState([]);
+  const [wishList, setWishList] = useState({ ids: [], prices: [] });
 
   return (
     <AppContext.Provider value={{ cart, setCart, wishList, setWishList }}>

@@ -29,11 +29,11 @@ function Store() {
     setCart({ ids: [...cart.ids, id], prices: [...cart.prices, price] });
   }
 
-  function addToWishList(id) {
-    if (wishList.includes(id)) {
+  function addToWishList(id, price) {
+    if (wishList.ids.includes(id)) {
       return;
     }
-    setWishList([...wishList, id]);
+    setWishList({ ids: [...wishList.ids, id], prices: [...wishList.prices, price] });
   }
 
   if (error) {
@@ -78,7 +78,7 @@ function Store() {
                 </button>
                 <button
                   onClick={() => {
-                    addToWishList(book.id);
+                    addToWishList(book.id, randomPrice);
                   }}
                 >
                   Add to Wish List

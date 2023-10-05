@@ -19,6 +19,9 @@
 - [ ] Add Back to Top button in Store page
 - [ ] Add Link to Source Code
 - [ ] Add Lazy loading to svg
+- [ ] Add ScreenShots in readme
+- [ ] Make 404 page responsive
+- [ ] 404 page works in localhost but not in prod
 - [x] Add css
   - [x] Home Page
   - [x] Store Page

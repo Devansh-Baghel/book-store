@@ -8,13 +8,20 @@ import useSWR from "swr";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 function WishList() {
-  const { wishList } = useContext(AppContext);
+  const { wishList, cart, setCart } = useContext(AppContext);
   const { data, error, isLoading } = useSWR(
-    wishList.length === 0
+    wishList.ids.length === 0
       ? null
-      : `https://gutendex.com/books?ids=${wishList.join(",")}`,
+      : `https://gutendex.com/books?ids=${wishList.ids.join(",")}`,
     fetcher
   );
+
+  function addToCart(id, price) {
+    if (cart.ids.includes(id)) {
+      return;
+    }
+    setCart({ ids: [...cart.ids, id], prices: [...cart.prices, price] });
+  }
 
   if (error) {
     return <div className="text-2xl text-center mt-20">There was an error</div>;
@@ -32,6 +39,8 @@ function WishList() {
     <div className="flex justify-center mb-20">
       <div className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 justify-center mt-20 gap-8 ">
         {data.results.map((book) => {
+          const bookPriceIndex = wishList.ids.indexOf(book.id);
+          const bookPrice = wishList.prices[bookPriceIndex];
           return (
             <div
               key={book.id}
@@ -43,6 +52,7 @@ function WishList() {
                     ? book.title.slice(0, 50) + "..."
                     : book.title}
                 </h3>
+                <h3>${bookPrice}</h3>
               </div>
               <img
                 src={book.formats["image/jpeg"]}
@@ -52,6 +62,9 @@ function WishList() {
               <div className="flex flex-col gap-4 md:self-center">
                 <button
                   className="bg-yellow rounded-md p-2"
+                  onClick={() => {
+                    addToCart(book.id, bookPrice);
+                  }}
                 >
                   Add to Cart
                 </button>
