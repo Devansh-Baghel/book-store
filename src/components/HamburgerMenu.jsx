@@ -13,7 +13,7 @@ function HamburgerMenu() {
 
   if (menuOpen) {
     return (
-      <div className="text-xl py-4 bg-yellow h-screen w-screen gap-8 flex flex-col p-10 sm:hidden">
+      <div className="text-xl py-4 bg-yellow h-screen w-screen gap-8 flex flex-col p-10 sm:hidden fixed">
         <button
           className="absolute top-8 left-8"
           onClick={() => {

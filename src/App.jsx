@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, createContext } from "react";
 import Router from "./Router";
+import "react-toastify/dist/ReactToastify.min.css";
 
 export const AppContext = createContext();
 

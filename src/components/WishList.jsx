@@ -4,8 +4,19 @@ import Loader from "./Loader";
 import emptyWishList from "../assets/undraw_bookmarks.svg";
 import EmptyList from "./EmptyList";
 import useSWR from "swr";
+import {ToastContainer, toast} from "react-toastify"
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
+const autoCloseTime = 4000;
+
+const toastSuccess = (content) => {
+  toast.success(content, { autoClose: autoCloseTime });
+};
+
+const toastError = (content) => {
+  toast.error(content, { autoClose: autoCloseTime });
+};
 
 function WishList() {
   const { wishList, cart, setCart } = useContext(AppContext);
@@ -18,8 +29,10 @@ function WishList() {
 
   function addToCart(id, price) {
     if (cart.ids.includes(id)) {
+      toastError("Item is already present in your cart");
       return;
     }
+    toastSuccess("Added to Cart");
     setCart({ ids: [...cart.ids, id], prices: [...cart.prices, price] });
   }
 
@@ -37,6 +50,7 @@ function WishList() {
 
   return (
     <div className="flex justify-center mb-20">
+      <ToastContainer limit={4} />
       <div className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 justify-center mt-20 gap-8 ">
         {data.results.map((book) => {
           const bookPriceIndex = wishList.ids.indexOf(book.id);

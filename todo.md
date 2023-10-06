@@ -9,11 +9,10 @@
 - [x] Add random prices
 - [x] Add spinner
 - [x] Sync random prices between store and cart.
+- [x] Add popup to tell user that the pricing is random.
+- [x] Add a popup to tell user that the item is already in cart.
+- [x] Add a popup to tell user that item is added to cart / wishlist.
 - [ ] Prevent prices to reload in store when button is clicked.
-- [ ] Add popup to tell user that this store is fake,
-- [ ] Add popup to tell user that the pricing is random.
-- [ ] Add a popup to tell user that the item is already in cart.
-- [ ] Add a popup to tell user that item is added to cart / wishlist.
 - [ ] Add a next page option in store or infinite scroll
 - [ ] Add footer
 - [ ] Add Back to Top button in Store page
@@ -21,7 +20,8 @@
 - [ ] Add Lazy loading to svg
 - [ ] Add ScreenShots in readme
 - [ ] Make 404 page responsive
-- [ ] 404 page works in localhost but not in prod
+- [x] 404 page works in localhost but not in prod
+- [x] Fix vercel issue with routing
 - [x] Add css
   - [x] Home Page
   - [x] Store Page

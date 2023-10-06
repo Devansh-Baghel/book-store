@@ -60,12 +60,16 @@ function Cart() {
           <h3 className="">Grand Total:</h3>
           <span>
             $
-            {cart.prices.reduce((acc, curr) => {
-              return parseFloat(acc) + parseFloat(curr);
-            }, 0)}
+            {Math.round(
+              cart.prices.reduce((acc, curr) => {
+                return parseFloat(acc) + parseFloat(curr);
+              }, 0) * 100
+            ) / 100}
           </span>
         </div>
-        <button className="bg-yellow rounded-md p-2 text-xl w-[80%] mt-3 max-w-[400px] self-center">Checkout</button>
+        <button className="bg-yellow rounded-md p-2 text-xl w-[80%] mt-3 max-w-[400px] self-center">
+          Checkout
+        </button>
       </div>
       <div className="grid grid-col-1 justify-center gap-8 md:row-start-1">
         {data.results.map((book) => {
