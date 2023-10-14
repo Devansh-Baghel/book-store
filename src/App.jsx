@@ -8,9 +8,10 @@ export const AppContext = createContext();
 function App() {
   const [cart, setCart] = useState({ ids: [], prices: [] });
   const [wishList, setWishList] = useState({ ids: [], prices: [] });
+  const [showNotificationBar, setShowNotificationBar] = useState(true);
 
   return (
-    <AppContext.Provider value={{ cart, setCart, wishList, setWishList }}>
+    <AppContext.Provider value={{ cart, setCart, wishList, setWishList, showNotificationBar, setShowNotificationBar }}>
       <Router />
     </AppContext.Provider>
   );

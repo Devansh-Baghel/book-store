@@ -15,14 +15,6 @@ const toastError = (content) => {
   toast.error(content, { autoClose: autoCloseTime });
 };
 
-// const toastInfo = (content) => {
-//   toast.info(content, {
-//     position: toast.POSITION.TOP_LEFT,
-//     autoClose: autoCloseTime,
-//     theme: "colored",
-//   });
-// };
-
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 function Store() {
@@ -31,7 +23,6 @@ function Store() {
     "https://gutendex.com/books/?page=1",
     fetcher
   );
-  const [showNotificationBar, setShowNotificationBar] = useState(true);
 
   function getRandPrice() {
     const randomCents = Math.floor(Math.random() * (2100 - 500 + 1)) + 500;
@@ -41,7 +32,6 @@ function Store() {
 
   useEffect(() => {
     console.log(getRandPrice());
-    // toastInfo("Prices of all these books are randomly generated");
   }, []);
 
   function addToCart(id, price) {
@@ -78,7 +68,7 @@ function Store() {
   return (
     <div className="flex justify-center mb-20 flex-col items-center mt-12 gap-8 sm:mt-0">
       <ToastContainer limit={4} />
-      {showNotificationBar ? <StoreInfoNotificationBar /> : null}
+      <StoreInfoNotificationBar />
       <div className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 justify-center gap-8 ">
         {data.results.map((book) => {
           const randomPrice = getRandPrice();
