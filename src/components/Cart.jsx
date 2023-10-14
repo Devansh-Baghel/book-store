@@ -30,7 +30,7 @@ function Cart() {
 
   return (
     <div className="pb-20 flex flex-col items-center pt-28 sm:pt-14 md:grid md:grid-cols-2 gap-10 md:gap-0 lg:px-[5vw] 2xl:[12vw]">
-      <div className="bg-gray-50 flex flex-col shadow-xl rounded-xl border-yellow border-4 w-[75vw] md:w-[40vw] max-w-[600px] md:col-start-2 md:self-start md:justify-self-center py-10 px-3 sm:px-8">
+      <div className="bg-gray-50 flex flex-col shadow-xl rounded-xl border-main_yellow border-4 w-[75vw] md:w-[40vw] max-w-[600px] md:col-start-2 md:self-start md:justify-self-center py-10 px-3 sm:px-8">
         <h3 className="text-xl text-center font-medium mb-2">Checkout</h3>
         <hr className="border-t-[1px] border-stone-900" />
         <div className="flex justify-between text-lg font-medium py-2">
@@ -67,7 +67,7 @@ function Cart() {
             ) / 100}
           </span>
         </div>
-        <button className="bg-yellow rounded-md p-2 text-xl w-[80%] mt-3 max-w-[400px] self-center">
+        <button className="bg-main_yellow rounded-md p-2 text-xl w-[80%] mt-3 max-w-[400px] self-center">
           Checkout
         </button>
       </div>
@@ -78,7 +78,7 @@ function Cart() {
           return (
             <div
               key={book.id}
-              className=" w-[75vw] sm:w-[60vw] md:w-[40vw] xl:w-[30vw] bg-gray-50 shadow-xl rounded-xl border-yellow border-4 flex flex-col p-6 gap-4 justify-between md:grid md:grid-cols-2"
+              className=" w-[75vw] sm:w-[60vw] md:w-[40vw] xl:w-[30vw] bg-gray-50 shadow-xl rounded-xl border-main_yellow border-4 flex flex-col p-6 gap-4 justify-between md:grid md:grid-cols-2"
             >
               <div className="flex flex-col gap-1 md:gap-4">
                 <h3 className="text-xl">

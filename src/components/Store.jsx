@@ -1,6 +1,7 @@
 import { useEffect, useContext, useState } from "react";
 import { AppContext } from "../App";
 import Loader from "./Loader";
+import StoreInfoNotificationBar from "./StoreInfoNotificationBar";
 import useSWR from "swr";
 import { toast, ToastContainer } from "react-toastify";
 
@@ -30,7 +31,7 @@ function Store() {
     "https://gutendex.com/books/?page=1",
     fetcher
   );
-  // const [showInfoToast, setShowInfoToast] = useState(true);
+  const [showNotificationBar, setShowNotificationBar] = useState(true);
 
   function getRandPrice() {
     const randomCents = Math.floor(Math.random() * (2100 - 500 + 1)) + 500;
@@ -75,15 +76,16 @@ function Store() {
   }
 
   return (
-    <div className="flex justify-center mb-20 ">
+    <div className="flex justify-center mb-20 flex-col items-center mt-12 gap-8 sm:mt-0">
       <ToastContainer limit={4} />
-      <div className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 justify-center mt-20 gap-8 ">
+      {showNotificationBar ? <StoreInfoNotificationBar /> : null}
+      <div className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 justify-center gap-8 ">
         {data.results.map((book) => {
           const randomPrice = getRandPrice();
           return (
             <div
               key={book.id}
-              className=" w-[75vw] sm:w-[60vw] md:w-[40vw] xl:w-[30vw] bg-gray-50 shadow-xl rounded-xl border-yellow border-4 flex flex-col p-6 gap-4 justify-between md:grid md:grid-cols-2 md:grid-rows-2"
+              className=" w-[75vw] sm:w-[60vw] md:w-[40vw] xl:w-[30vw] bg-gray-50 shadow-xl rounded-xl border-main_yellow border-4 flex flex-col p-6 gap-4 justify-between md:grid md:grid-cols-2 md:grid-rows-2"
             >
               <div>
                 <h3 className="text-xl md:col-start-2">
@@ -100,7 +102,7 @@ function Store() {
               />
               <div className="flex flex-col gap-4 md:self-center">
                 <button
-                  className="bg-yellow rounded-md p-2"
+                  className="bg-main_yellow rounded-md p-2"
                   onClick={() => {
                     addToCart(book.id, randomPrice);
                   }}

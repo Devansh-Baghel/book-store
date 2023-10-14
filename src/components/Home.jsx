@@ -10,7 +10,7 @@ function Home() {
           at Our Bookstore!
         </h1>
         <Link to={"/shop"} className="">
-          <button className="bg-yellow text-whi px-8 py-1 rounded-lg text-xl shadow-lg">
+          <button className="bg-main_yellow text-whi px-8 py-1 rounded-lg text-xl shadow-lg">
             Start Reading
           </button>
         </Link>

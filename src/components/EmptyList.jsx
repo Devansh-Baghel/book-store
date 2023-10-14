@@ -8,7 +8,7 @@ function EmptyList(props) {
         Your {props.page} is empty
       </h1>
       <Link to={"/shop"}>
-        <button className="bg-yellow px-8 py-1 rounded-lg sm:text-xl shadow-lg text-sm">
+        <button className="bg-main_yellow px-8 py-1 rounded-lg sm:text-xl shadow-lg text-sm">
           Continue Shopping
         </button>
       </Link>

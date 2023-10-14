@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        yellow: "#FFCE1A",
+        main_yellow: "#FFCE1A",
       },
       fontFamily: {
         main: ["Montserrat", "ui-sans-serif", "system-ui"],
