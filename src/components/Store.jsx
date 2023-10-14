@@ -14,13 +14,13 @@ const toastError = (content) => {
   toast.error(content, { autoClose: autoCloseTime });
 };
 
-const toastInfo = (content) => {
-  toast.info(content, {
-    position: toast.POSITION.TOP_LEFT,
-    autoClose: autoCloseTime,
-    theme: "colored",
-  });
-};
+// const toastInfo = (content) => {
+//   toast.info(content, {
+//     position: toast.POSITION.TOP_LEFT,
+//     autoClose: autoCloseTime,
+//     theme: "colored",
+//   });
+// };
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -30,6 +30,7 @@ function Store() {
     "https://gutendex.com/books/?page=1",
     fetcher
   );
+  // const [showInfoToast, setShowInfoToast] = useState(true);
 
   function getRandPrice() {
     const randomCents = Math.floor(Math.random() * (2100 - 500 + 1)) + 500;
@@ -37,10 +38,9 @@ function Store() {
     return randomPrice;
   }
 
-
   useEffect(() => {
     console.log(getRandPrice());
-    toastInfo("Prices of all these books are randomly generated");
+    // toastInfo("Prices of all these books are randomly generated");
   }, []);
 
   function addToCart(id, price) {
