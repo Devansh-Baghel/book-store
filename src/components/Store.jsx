@@ -18,9 +18,10 @@ const toastError = (content) => {
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 function Store() {
+  // const [pageCount, setPageCount] = useState(1);
   const { cart, wishList, setCart, setWishList } = useContext(AppContext);
   const { data, error, isLoading } = useSWR(
-    "https://gutendex.com/books/?page=1",
+    `https://gutendex.com/books/?page=1`,
     fetcher
   );
 
@@ -65,6 +66,8 @@ function Store() {
     return <Loader />;
   }
 
+  console.log(data)
+
   return (
     <div className="flex justify-center mb-20 flex-col items-center mt-12 gap-8 sm:mt-0">
       <ToastContainer limit={4} />
@@ -89,6 +92,7 @@ function Store() {
                 src={book.formats["image/jpeg"]}
                 alt={book.title}
                 className="md:col-start-1 md:row-start-1 md:row-end-3"
+                loading="lazy"
               />
               <div className="flex flex-col gap-4 md:self-center">
                 <button
@@ -111,6 +115,8 @@ function Store() {
           );
         })}
       </div>
+
+      {/* <button onClick={loadMoreData}>Load More</button> */}
     </div>
   );
 }

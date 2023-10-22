@@ -4,6 +4,7 @@ import Loader from "./Loader";
 import emptyCart from "../assets/undraw_empty_cart.svg";
 import EmptyList from "./EmptyList";
 import useSWR from "swr";
+import BookCounter from "./BookCounter";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -88,6 +89,7 @@ function Cart() {
                 </h3>
                 <h3 className="text-sm">{book.authors[0]?.name}</h3>
                 <h3 className="text-lg">${bookPrice}</h3>
+                <BookCounter />
               </div>
               <img
                 src={book.formats["image/jpeg"]}
