@@ -26,11 +26,11 @@ function CheckoutBooks({ book, bookPrice }) {
         </h3>
         <h3 className="text-sm">{book.authors[0]?.name}</h3>
         <h3 className="text-lg">${bookPrice * orderCount}</h3>
-        <div>
-          <button onClick={increaseCount}>+</button>
-          <input type="number" min={0} max={10} value={orderCount} />
-          <button onClick={decreaseCount}>-</button>
-        </div>
+        {/* <div> */}
+        {/*   <button onClick={increaseCount}>+</button> */}
+        {/*   <input type="number" min={0} max={10} value={orderCount} /> */}
+        {/*   <button onClick={decreaseCount}>-</button> */}
+        {/* </div> */}
       </div>
       <img
         src={book.formats["image/jpeg"]}
