@@ -20,6 +20,7 @@
 - [ ] Add Lazy loading to svg
 - [ ] Add ScreenShots in readme
 - [ ] Make 404 page responsive
+- [x] Fix home page menu in mobile view
 - [x] 404 page works in localhost but not in prod
 - [x] Fix vercel issue with routing
 - [x] Add css
