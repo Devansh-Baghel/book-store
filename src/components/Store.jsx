@@ -8,11 +8,11 @@ import { toast, ToastContainer } from "react-toastify";
 const autoCloseTime = 4000;
 
 const toastSuccess = (content) => {
-  toast.success(content, { autoClose: autoCloseTime });
+  toast.success(content, { autoClose: autoCloseTime, position: "top-left" });
 };
 
 const toastError = (content) => {
-  toast.error(content, { autoClose: autoCloseTime });
+  toast.error(content, { autoClose: autoCloseTime, position: "top-left", });
 };
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
