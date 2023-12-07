@@ -37,7 +37,6 @@ function Cart() {
   return (
     <div>
       <ToastContainer />
-
       <div className="pb-20 flex flex-col items-center pt-28 sm:pt-14 md:grid md:grid-cols-2 gap-10 md:gap-0 lg:px-[5vw] 2xl:[12vw]">
         <div className="bg-gray-50 flex flex-col shadow-xl rounded-xl border-main_yellow border-4 w-[75vw] md:w-[40vw] max-w-[600px] md:col-start-2 md:self-start md:justify-self-center py-10 px-3 sm:px-8">
           <h3 className="text-xl text-center font-medium mb-2">Checkout</h3>
